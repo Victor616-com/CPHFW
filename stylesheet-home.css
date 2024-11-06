@@ -71,6 +71,7 @@ p {
 }
 #top-section #map {
     border-radius: 10px;
+    width: 450px;
 }
 #top-section .top-section-element {
     display: flex;
@@ -88,8 +89,7 @@ p {
 #events {
     overflow: hidden;
     border-radius: 10px;
-    width: 551px;
-    height: 341px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -192,7 +192,7 @@ p {
     border-right: 14px dashed var(--red);
 }
 .news-item .news-item-content {
-    min-width: 300px;
+    width: 300px;
     height: 100%;
     display: flex;
     justify-content: center;
