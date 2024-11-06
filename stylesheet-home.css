@@ -1,0 +1,215 @@
+:root {
+    --margin: 50px;
+    --blue: #5BBBE1;
+    --red: #C62127;
+    --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+svg {
+    transform: scale(0.5)
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    margin: 0;
+}
+h3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    margin: 0;
+}
+p {
+    font-family: "Albert Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    margin: 0;
+}
+/* HEADER */
+#header {
+    width: 100vw;
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+#header #socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-right: var(--margin);
+}
+
+#header #logo {
+    margin-left: var(--margin);
+}
+
+
+/* TOP SECTION */
+
+#top-section {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.element-title {
+    margin-top: 20px;
+}
+#top-section #map {
+    border-radius: 10px;
+}
+#top-section .top-section-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+}
+
+#top-section .top-section-element #map {
+    box-shadow: var(--shadow);
+
+}
+
+#events {
+    overflow: hidden;
+    border-radius: 10px;
+    width: 551px;
+    height: 341px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: var(--shadow);
+
+}
+#events #events-image {
+    height: 225px;
+    width: 100%;
+    background-size: cover;                 /* Scales the image to cover the div */
+    background-position: top;            /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+
+#events #events-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+#events #events-nav #more {
+    margin-left: 40px;
+}
+#events #events-nav #nav-circles { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 7.2px;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+#events #events-nav #nav-circles .circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 0.9px solid var(--red);
+}
+#events #events-nav #nav-circles .circle.active {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 0.9px solid var(--red);
+    background-color: var(--red);
+}
+
+#events #events-nav #events-next-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    display: inline-flex;
+    padding-top: 7.18px;
+    padding-bottom: 7.18px;
+    padding-left: 14.36px;
+    padding-right: 14.36px;
+    border-radius: 8px;
+    border: 0.897px solid var(--blue);
+    margin-right: 40px;
+    background-color: transparent;
+}
+
+#events #more {
+    color: var(--red);
+}
+
+
+
+#bottom-section {
+    margin-top: 20px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+#bottom-section .element-title {
+    text-align: center;
+}
+
+.news-slider-wrapper {
+    margin-top: 20px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    box-shadow: var(--shadow);
+}
+.news-slider-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.news-item {
+    height: 341px;
+    display: flex;
+    position: relative;
+    border-right: 14px dashed var(--red);
+}
+.news-item .news-item-content {
+    min-width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.news-item .news-item-content h2 {
+    font-size: 40.5px;
+}
+.news-item .read-more {
+    cursor: pointer;
+    position: absolute;
+    right: 4%;
+    bottom: 4%;
+    font-weight: 500;
+    font-size: 18.6px;
+    color: var(--red);
+    text-decoration-line: underline;
+}
