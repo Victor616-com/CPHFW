@@ -63,7 +63,7 @@ p {
     margin-top: 10px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 .element-title {
@@ -72,6 +72,7 @@ p {
 #top-section #map {
     border-radius: 10px;
     width: 450px;
+    height: 330px;
 }
 #top-section .top-section-element {
     display: flex;
@@ -90,6 +91,7 @@ p {
     overflow: hidden;
     border-radius: 10px;
     width: 450px;
+    height: 330px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
