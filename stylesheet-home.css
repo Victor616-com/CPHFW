@@ -4,7 +4,9 @@
     --red: #C62127;
     --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-
+html, body{
+    overflow:hidden;
+}
 svg {
     transform: scale(0.5)
 }
@@ -37,8 +39,8 @@ p {
 }
 /* HEADER */
 #header {
+    padding-top: 10px;
     width: 100vw;
-    height: 76px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,6 +55,7 @@ p {
 }
 
 #header #logo {
+   
     margin-left: var(--margin);
 }
 
@@ -231,17 +234,98 @@ p {
 /* Styles for mobile devices (up to 391px) */
 @media screen and (max-width: 391px) {
 h2 {
-    color: blue;
+    font-size: 20px;
+}
+h3 {
+    font-size: 16px;
+}
+:root {
+    --margin: 30px;
+    --blue: #5BBBE1;
+    --red: #C62127;
+    --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+
+/* Header */
+
+#header #youtube {
+    display: none;
+}
+#header #spotify {
+    display: none;
+}
+
+#header {
+    top: 0;
+}
+#header #socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-right: var(--margin);
+}
+
+#header #logo {
+    margin-left: var(--margin);
+    height: 40px;
+    width: auto;
+}
+
+
+
 #top-section {
-    display: block;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #top-section #map {
-    width: 100%; /* Make it responsive */
-    max-width: 800px; /* Ensure it fits smaller screens */
+    width: 293px;
+    height: 178px;
 }
 
+#events {
+    width: 293px;
+    height: 220px;
+
+}
+#events #event-title {
+    margin-top: 10px;
+}
+#events #events-nav {
+    margin-top: 10px;
+    align-items: center;
+}
+#events #events-nav #more {
+    margin-left: 20px;
+    font-size: 12px;
+}
+#events #events-nav #nav-circles { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 7.2px;
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+#events #events-nav #nav-circles .circle {
+    width: 3px;
+    height: 3px;
+}
+#events #events-nav #nav-circles .circle.active {
+    width: 3px;
+    height: 3px;
+}
+
+#events #events-nav #events-next-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 20px;
+}
 
 }
