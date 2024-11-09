@@ -230,11 +230,17 @@ p {
 
 /* Styles for mobile devices (up to 391px) */
 @media screen and (max-width: 391px) {
+h2 {
+    color: blue;
+}
+
 #top-section {
     display: block;
 }
+
 #top-section #map {
-    width: 800px;
+    width: 100%; /* Make it responsive */
+    max-width: 800px; /* Ensure it fits smaller screens */
 }
 
 
