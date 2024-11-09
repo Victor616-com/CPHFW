@@ -84,11 +84,16 @@ const markers = [
 ];
 
 function initMap() {
-
+    let zoom = 0
+    if (window.innerWidth <= 390) {
+        zoom = 11.1;
+    } else {
+        zoom = 12.3;
+    }
     const centerMap = { lat: 55.6603366, lng: 12.6015 }
     const mapOptions = {
         center: centerMap,
-        zoom: 12.2,
+        zoom: zoom,
         disableDefaultUI: true,
         styles: [
             {

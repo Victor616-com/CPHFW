@@ -230,6 +230,31 @@ p {
     text-decoration-line: underline;
 }
 
+@media screen and (max-width: 1024px) {
+
+    #top-section #map {
+        width: 450px;
+        height: 300px;
+    }
+    
+    #events {
+        width: 450px;
+        height: 300px;
+    }
+    #events #event-title {
+        margin-top: 10px;
+    }
+    #events #events-nav {
+        margin-top: 10px;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
 
 /* Styles for mobile devices (up to 391px) */
 @media screen and (max-width: 391px) {
