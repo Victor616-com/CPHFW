@@ -5,10 +5,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&display=swap" rel="stylesheet">
-    <meta>
     <title>CPHFW</title>
     <link rel="stylesheet" href="stylesheet-home.css">
-
+    
+    
 </head>
 <body>
     <div id="header">
@@ -35,7 +35,10 @@
     <div id="top-section">
         <div class="top-section-element">
             <h2 class="element-title">MAP OF EVENTS:</h2>
-            <img id="map" src="resources/Map.jpg" alt="map">
+            <div id="map-wrapper">
+                <div id="map"></div>
+                <img id="full-screen-btn" src="resources/full-screen.svg" alt="full-screen-btn">
+            </div>
         </div>
         <div class="top-section-element">
             <h2 class="element-title">EVENTS:</h2>
@@ -101,6 +104,7 @@
         </div>
     </div>
 
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlfT7qosbn2ZLpsrBmwhI7HwXQj23GKNI&callback=initMap"></script>
     <script src="javascript.js"></script>
 </body>
 </html>
