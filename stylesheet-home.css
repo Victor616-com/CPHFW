@@ -172,6 +172,7 @@ p {
     border: 0.897px solid var(--blue);
     margin-right: 40px;
     background-color: transparent;
+    touch-action: manipulation;
 }
 
 #events #more {
@@ -208,7 +209,7 @@ p {
     border-right: 14px dashed var(--red);
 }
 .news-item .news-item-content {
-    width: 300px;
+    min-width: 300px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -230,7 +231,18 @@ p {
     text-decoration-line: underline;
 }
 
-@media screen and (max-width: 1024px) {
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1100px) {
 
     #top-section #map {
         width: 450px;
@@ -247,6 +259,9 @@ p {
     #events #events-nav {
         margin-top: 10px;
         align-items: center;
+    }
+    .news-item .news-item-content {
+        min-width: 100px;
     }
 }
 

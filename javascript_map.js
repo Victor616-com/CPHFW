@@ -1,48 +1,4 @@
-let imageHolder = document.getElementById('events-image');
-let eventTitle = document.getElementById('event-title');
-let nextBtn = document.getElementById('events-next-btn');
-let dots = document.querySelectorAll('.circle');
-
-let images = ['event_1.png', 'event_2.png', 'event_3.png', 'event_4.png'];
-let titles = [
-    'Copenhagen Fashion Week : OpéraSport',
-    'Copenhagen Fashion Week : Baum und Pferdgarten',
-    'Copenhagen Fashion Week : Gestuz',
-    'Copenhagen Fashion Week : Munthe'
-]
-let i = 0;
-// Preload images
-let preloadedImages = images.map(src => {
-    const img = new Image();
-    img.src = `resources/${src}`;
-    return img;
-});
-
-
-// Create an h3 element for the title and append it initially
-let titleElement = document.createElement('h3');
-titleElement.textContent = titles[i];
-eventTitle.appendChild(titleElement);
-// Initialize content
-imageHolder.style.backgroundImage = `url('resources/${images[i]}')`;
-let circleArray = [];
-dots.forEach((dot, index) => {
-    circleArray.push(dot);
-    if (index === i) {
-        dot.classList.add('active');
-    }
-});
-// Handle next button click
-function next() {
-    circleArray[i].classList.remove('active');
-    i = (i + 1) % images.length;  
-    circleArray[i].classList.add('active');
-    imageHolder.style.backgroundImage = `url('resources/${images[i]}')`;
-    titleElement.textContent = titles[i];
-}
-
-
-
+const mapWrapper = document.getElementById('map-wrapper')
 const markers = [
     {
         locationName: 'Copenhagen City Hall',
@@ -85,14 +41,20 @@ const markers = [
 
 function initMap() {
     let zoom = 0
+    let positioOnStart = []
     if (window.innerWidth <= 390) {
-        zoom = 11.1;
+        zoom = 13
+        positioOnStart = [55.6563366, 12.5715];
     } else if (window.innerWidth <= 1100) {
-        zoom = 12;
+        zoom = 13;
+        positioOnStart = [55.6533366, 12.6015];
     } else {
-        zoom = 12.3
+        zoom = 13.5;
+        positioOnStart = [55.6563366, 12.6015];
     }
-    const centerMap = { lat: 55.6563366, lng: 12.6015 }
+    
+
+    const centerMap = { lat: positioOnStart[0], lng: positioOnStart[1] }
     const mapOptions = {
         center: centerMap,
         zoom: zoom,
@@ -315,19 +277,97 @@ function initMap() {
     }
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
     
-    for(let i = 0; i < markers.length; i++) {
+    markers.forEach((markerData) => {
         const marker = new google.maps.Marker({
-            position: {lat: markers[i]['lat'], lng: markers[i]['lng']},
+            position: { lat: markerData.lat, lng: markerData.lng },
             map: map,
             icon: {
-                url: markers[i]['iconUrl'],
-                scaledSize: new google.maps.Size(25, 25), // scaled size
-                origin: new google.maps.Point(0,0), // origin
-                anchor: new google.maps.Point(0, 0) // anchor
+                url: markerData.iconUrl,
+                scaledSize: new google.maps.Size(30, 30),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 0)
             }
         });
-    }
+
+       
+
+        const markerDet = document.createElement('div');
+        markerDet.classList.add('marker_det');
+        markerDet.innerHTML = `
+            <div class="marker-top">
+                <h2>${markerData.locationName}</h2>
+                <img class="exit" src="resources/x.svg" alt="x">
+            </div>
+            <p>${markerData.description}</p>
+            <button class="events-btn">Events</button>
+        `;
+
+        if (window.innerWidth > 400) {
+            const overlay = new google.maps.OverlayView();
+            overlay.onAdd = function () {
+                const panes = this.getPanes();
+                panes.overlayMouseTarget.appendChild(markerDet);
+        
+             // Exit button functionality
+                const exitBtn = markerDet.querySelector('.exit');
+                exitBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    markerDet.classList.remove('show');
+                });
+            };
+        
+            overlay.draw = function () {
+                const projection = this.getProjection();
+                const position = projection.fromLatLngToDivPixel(marker.getPosition());
+                markerDet.style.left = position.x + 40 + 'px';
+                markerDet.style.top = position.y - 10 + 'px';
+            };
+        
+            overlay.setMap(map);
+        
+            // Click event to toggle marker details visibility
+            marker.addListener('click', () => {
+                // Hide all other marker details
+                document.querySelectorAll('.marker_det').forEach((el) => el.classList.remove('show'));
+        
+                // Show the current marker detail
+                markerDet.classList.add('show');
+            });
+        
+         // Update overlay position when the map is idle
+            google.maps.event.addListener(map, 'idle', () => overlay.draw());
+
+        } else {
+            mapWrapper.appendChild(markerDet);
+            // Ensure the marker details are toggled on click
+            marker.addListener('click', () => {
+                // Toggle the visibility of the marker details for mobile
+                const isVisible = markerDet.classList.contains('show-mobile');
+                document.querySelectorAll('.marker_det').forEach((el) => el.classList.remove('show-mobile'));
+                if (!isVisible) {
+                    markerDet.classList.add('show-mobile');
+                }
+            });
+
+            // Exit button for mobile
+            const exitBtn = markerDet.querySelector('.exit');
+            exitBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                markerDet.classList.remove('show-mobile');
+            });
+        }
+        
+        
+    });
+   
+
     displayCurrentLocation(map);
+    // Prevent touch zoom and gesture zoom on mobile devices
+    document.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 1) e.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener('gesturestart', (e) => e.preventDefault());
 }
 
 function displayCurrentLocation(map) {
@@ -383,15 +423,33 @@ function displayCurrentLocation(map) {
                 google.maps.event.addListener(map, 'idle', () => {
                     overlay.draw();
                 });
+                
             },
             (error) => {
                 console.error('Geolocation failed: ', error);
             }
+            
         );
     } else {
         console.error('Geolocation is not supported by this browser.');
     }
 }
+
+
+
+function updateBackBtnImg() {
+    const image = document.getElementById("back-btn");
+    if (window.innerWidth > 400) {
+        image.src = 'resources/back-btn.svg';
+    } else {
+        image.src = 'resources/back-btn-mobile.svg';
+    }
+}
+// Update the image source when the page loads
+window.onload = updateBackBtnImg;
+
+// Update the image source on window resize
+window.onresize = updateBackBtnImg;
 
 
 
