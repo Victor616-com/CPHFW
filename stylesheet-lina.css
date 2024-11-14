@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     font-family: 'Albert Sans';
     font-size: large;
     height: 100vh; 
@@ -25,7 +25,6 @@ body {
 .news {
     display: flex;
     align-items: center;
-
     flex-direction: row; 
     width: 100%;
     overflow: hidden;
@@ -37,29 +36,29 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 60%; /* Width of text section */
+    width: 60%; 
     color: #000;
     font-family: "Albert Sans", serif;
-    font-optical-sizing: auto;
+    font-size: 20px;
     margin-right: 70px;
     margin-top: 0px;
-    margin-left: 20px;
+    margin-left: 60px;
     padding-bottom: 50px; 
     overflow-y: auto; 
-    max-height: calc(100vh - 309px); /* Reduce the height of text section */
-    position: relative; /* Allow absolute positioning of button */
+    height: 750px;
+    position: relative;
 }
 
 .text-section::-webkit-scrollbar {
     display: none; 
 }
 
-/* More specific targeting */
+
 .text-section h1 {
     font-family: "Bebas Neue", sans-serif;
     font-size: 46px;
     color: #000;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
     width: 100%;
     font-weight: normal;
     text-align: center;
@@ -69,7 +68,7 @@ body {
 /* Button positioning */
 .button-wrapper {
     position: absolute;
-    bottom: 95px; 
+    bottom: 124px; 
     right: 310px; 
     width: auto;
     text-align: center;
@@ -109,7 +108,7 @@ body {
 
 .image {
     width: 50%;
-    height: 100%;
+    height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,7 +258,7 @@ form button {
   /* ------------------------------ NAV ------------------------------*/
 
 
-#nav-wrapper {
+  #nav-wrapper {
     display: flex;
     width: 100%;
     align-items: center;
@@ -274,7 +273,7 @@ form button {
     justify-content: center;
     align-items: top;
     gap: 78px;
-    background-color: #aa1b1b;
+    background-color: white;
     border-radius: 15px;
     padding: 9px 78px 4px 78px;
     box-shadow: var(--shadow);
@@ -332,7 +331,7 @@ form button {
         top: auto; 
         left: auto; 
         width: 95%;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
         z-index: auto;
         text-align: center;
         font-size: 30px;
@@ -340,7 +339,7 @@ form button {
 
     .image {
         width: 95%; 
-        margin: 20px auto;
+        margin-top: 30px;
     }
 
     .image img {
@@ -352,7 +351,7 @@ form button {
 
     .text-section {
         width: 85%; 
-        margin: 20px auto;
+        margin: 20xpx;
         font-size: 15px;
     } 
 
@@ -389,7 +388,7 @@ form button {
 
 /* -------------- Navigation bar mobile --------------*/
 
-#nav-wrapper {
+#nav-wrapper {  
     display: flex;
     width: 100vw;
     align-items: center;
@@ -405,14 +404,14 @@ form button {
     flex-direction: row;
     justify-content: space-between;
     align-items: top;
-    background-color: rgb(220, 40, 40);
+    background-color: white;
     border-radius: 0px;
     padding: 5px 10px 3px 10px;
     box-shadow: var(--shadow);
 }
 
 #nav img{
-    height: 36px;
+    height: 32px;
     width: auto;
 
 }
@@ -468,9 +467,130 @@ form button {
     font-weight: 400;
     font-size: 15px;
     overflow-y: visible; 
-    max-height: calc(100vh - 309px); /* Reduce the height of text section */
-    position: relative; /* Allow absolute positioning of button */
+    max-height: calc(100vh - 309px); 
+    position: relative; 
 }
+
+/*-------------------------------- OVERLAYs---------------------------*/
+
+/* The overlay (hidden by default) */
+.overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1000; 
+}
+
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the modal */
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    width: 348px;
+    height: 275px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.overlay h1 {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding: 50px, 50px, 50px, 50px;
+    font-family: "Albert Sans", sans-serif;
+    font-size: 18px;
+    color: #000;
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    align-items: center;
+}
+
+.highlight {
+    color: #C62127;
+}
+
+.overlay p {
+    font-family: "Albert Sans", sans-serif;
+    font-size: 15px;
+    color: #000;
+    width: 100%;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 45px;
+}
+
+form input {
+    padding: 11px;
+    width: 70%;
+    margin-bottom: 5px;
+    border: 1px solid hsla(0, 0%, 80%, 0.897);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    font-family: "Albert Sans";
+}
+
+.overlay input[type="email"] {
+    background-color: #c9c9c9;
+  }
+
+.overlay button[type="submit"] {
+    display: block; 
+    margin-left: 213px;
+    margin-top: 6px;
+  }
+
+form button {
+    background-color: #C62127;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-family: "Albert Sans";
+
+}
+
+
+#thank-you-overlay .modal {
+    /* ... other styles ... */
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+  
+  #thank-you-overlay h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 30px;
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+  }
 
 
 }
