@@ -9,6 +9,24 @@ body {
     flex-direction: column;
 }
 
+#screensaver {
+    position: fixed; 
+    width: 100vw; 
+    height:100vh; 
+    left:0px; 
+    top: 0px; 
+    display: none; 
+    z-index:10000;
+    background: rgba(0, 0, 0, 0.8);
+ }
+ 
+ #screensaver video{
+   width: 100vw; 
+   height:100vh; 
+   left:0px; 
+   top: 0px;   
+ }
+
 .back-button {
     position: fixed;
     top: 0px;
@@ -63,7 +81,9 @@ body {
     font-weight: normal;
     text-align: center;
 }
-
+.text-section p {
+    margin-bottom: 70px;
+}
 
 /* Button positioning */
 .button-wrapper {
@@ -276,7 +296,7 @@ form button {
     background-color: white;
     border-radius: 15px;
     padding: 9px 78px 4px 78px;
-    box-shadow: var(--shadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 #nav img{
@@ -403,11 +423,10 @@ form button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: top;
     background-color: white;
+    align-items: top;
     border-radius: 0px;
     padding: 5px 10px 3px 10px;
-    box-shadow: var(--shadow);
 }
 
 #nav img{

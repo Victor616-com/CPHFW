@@ -61,3 +61,52 @@ function closeThankYouOverlay() {
   }
 }
 
+$(document).ready(function () {
+  var mousetimeout;
+  var screensaver_active = false;
+  var idletime = 60;
+  var minWidth = 900;
+  var maxWidth = 1920;
+  var minHeight = 680;
+  var maxHeight = 1080;
+  console.log("Window size: " + window.innerWidth + "x" + window.innerHeight); // Debugging
+  function show_screensaver() {
+    // Check if the screen size is within the desired range before showing the screensaver
+    if (window.innerWidth >= minWidth && window.innerWidth <= maxWidth &&
+        window.innerHeight >= minHeight && window.innerHeight <= maxHeight) {
+      $('#screensaver').fadeIn();
+      const video = document.getElementById('screensaver');
+      video.play();
+      screensaver_active = true;
+    }
+  }
+  function stop_screensaver() {
+      $('#screensaver').fadeOut();
+      const video = document.getElementById('screensaver');
+      video.pause();
+      video.currentTime = 0; 
+      screensaver_active = false;
+  }
+
+  function resetScreensaverTimeout() {
+      clearTimeout(mousetimeout);
+      
+      if (screensaver_active) {
+          stop_screensaver();
+      }
+
+      mousetimeout = setTimeout(function () {
+          show_screensaver();
+      }, 1000 * idletime);  
+  }
+
+  document.getElementById("screensaver").addEventListener('click', function() {
+    stop_screensaver();
+    resetScreensaverTimeout();
+  });
+
+  $(document).mousemove(resetScreensaverTimeout);
+  $(document).click(resetScreensaverTimeout);
+
+  resetScreensaverTimeout();
+});

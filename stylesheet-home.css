@@ -37,6 +37,27 @@ p {
     font-size: 14px;
     margin: 0;
 }
+
+#screensaver {
+position: fixed; 
+width: 100vw; 
+height:100vh; 
+left:0px; 
+top: 0px; 
+display: none; 
+z-index:10000;
+background: rgba(0, 0, 0, 0.8);
+}
+
+#screensaver video {
+width: 100vw; 
+height:100vh; 
+left:0px; 
+top: 0px;   
+}
+
+
+
 /* HEADER */
 #header {
     padding-top: 10px;
