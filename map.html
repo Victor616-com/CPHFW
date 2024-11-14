@@ -7,23 +7,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet-map.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>CPHFW</title>
 </head>
 <body>
+    <div id="screensaver">
+        <video autoplay muted loop playsinline>
+          <source src="resources/screensaver_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
     <div id="map-wrapper">
         <div id="map"></div>
         <a href="index.html"><img id="back-btn" alt="back"></a>
     </div>
     <div id="nav-wrapper">
         <div id="nav">
-            <a href=""><img src="resources/Outfits.svg" alt=""></a>
+            <a href="inspiration_page-larisa.html"><img src="resources/Outfits.svg" alt=""></a>
             <div id="selection-wrapper">
                 <a href="map.html"><img src="resources/Map.svg" alt=""></a>
                 <div id="selection"></div>
             </div>
             <a href="index.html"><img src="resources/Home.svg" alt=""></a>
-            <a href=""><img src="resources/Calendar.svg" alt=""></a>
-            <a href=""><img src="resources/News.svg" alt=""></a>
+            <a href="events.html"><img src="resources/Calendar.svg" alt=""></a>
+            <a href="lina.html"><img src="resources/News.svg" alt=""></a>
         </div>
     </div>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlfT7qosbn2ZLpsrBmwhI7HwXQj23GKNI&callback=initMap"></script>

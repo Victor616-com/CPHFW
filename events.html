@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Info</title>
     <link rel="stylesheet" href="style_events.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <div id="screensaver">
+        <video autoplay muted loop playsinline>
+          <source src="resources/screensaver_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
     <nav>
         <div id="nav-wrapper">
             <div id="nav">
@@ -209,7 +216,7 @@
                     <img src="resources/map.png" class="map" alt="">
                     <button class="map-button" onclick="openMap()">OPEN MAP</button>
                 </div>
-                <button class="map-button-mobile">OPEN MAP</button>
+                <button class="map-button-mobile" onclick="openMap()">OPEN MAP</button>
             </div>
         </div>
     </div>
