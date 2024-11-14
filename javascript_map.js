@@ -1,4 +1,6 @@
 const mapWrapper = document.getElementById('map-wrapper')
+
+// --- Markers data ---
 const markers = [
     {
         locationName: 'Copenhagen City Hall',
@@ -39,9 +41,17 @@ const markers = [
     
 ];
 
+function openEventsLink() {
+    window.location.href = "https://www.example.com";
+}
+
+// --- Function for the map --- 
 function initMap() {
-    let zoom = 0
-    let positioOnStart = []
+
+    // -- positioning the map on load based on the screen size 
+    let zoom = 0;
+    let positioOnStart = [];
+    let zoomControls = false;
     if (window.innerWidth <= 390) {
         zoom = 13
         positioOnStart = [55.6563366, 12.5715];
@@ -51,14 +61,17 @@ function initMap() {
     } else {
         zoom = 13.5;
         positioOnStart = [55.6563366, 12.6015];
+        zoomControls = true;
     }
     
-
     const centerMap = { lat: positioOnStart[0], lng: positioOnStart[1] }
     const mapOptions = {
         center: centerMap,
         zoom: zoom,
-        disableDefaultUI: true,
+        disableDefaultUI: true, // Disable the google maps controls 
+        zoomControl: zoomControls,
+
+        // Styling for the map from SnazzyMaps
         styles: [
             {
                 "featureType": "all",
@@ -275,9 +288,14 @@ function initMap() {
             }
         ]
     }
+
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
     
+
+    // --- Displaying the markers and the pop-up boxes ---
     markers.forEach((markerData) => {
+
+        // Displaying the markers on the map
         const marker = new google.maps.Marker({
             position: { lat: markerData.lat, lng: markerData.lng },
             map: map,
@@ -290,7 +308,9 @@ function initMap() {
         });
 
        
+        // --- Creating the marker details box ---
 
+        // Creating the html for each one
         const markerDet = document.createElement('div');
         markerDet.classList.add('marker_det');
         markerDet.innerHTML = `
@@ -299,23 +319,27 @@ function initMap() {
                 <img class="exit" src="resources/x.svg" alt="x">
             </div>
             <p>${markerData.description}</p>
-            <button class="events-btn">Events</button>
+            <button class="events-btn" onclick="openEventsLink()">Events</button>
         `;
 
+        
+
+        // Modifying the interaction based on the screen size
         if (window.innerWidth > 400) {
             const overlay = new google.maps.OverlayView();
             overlay.onAdd = function () {
                 const panes = this.getPanes();
-                panes.overlayMouseTarget.appendChild(markerDet);
+                panes.overlayMouseTarget.appendChild(markerDet); // Adding to the panes of google API so they stay next to the markers
         
-             // Exit button functionality
+                // Exit button functionality
                 const exitBtn = markerDet.querySelector('.exit');
                 exitBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     markerDet.classList.remove('show');
                 });
             };
-        
+            
+            // Updating the position of the box based on the position of the marker
             overlay.draw = function () {
                 const projection = this.getProjection();
                 const position = projection.fromLatLngToDivPixel(marker.getPosition());
@@ -325,12 +349,12 @@ function initMap() {
         
             overlay.setMap(map);
         
-            // Click event to toggle marker details visibility
+            // Click event to toggle marker details box visibility
             marker.addListener('click', () => {
-                // Hide all other marker details
+                // Hide all other marker details when one is clicked
                 document.querySelectorAll('.marker_det').forEach((el) => el.classList.remove('show'));
-        
-                // Show the current marker detail
+
+                // Show the current marker detail (the class show has the final scale and the css animation)
                 markerDet.classList.add('show');
             });
         
@@ -338,10 +362,16 @@ function initMap() {
             google.maps.event.addListener(map, 'idle', () => overlay.draw());
 
         } else {
+
+            // --- Behaviour on the mobile version ---
+
+            // Add the marker details box to the mapWrapper div so it can have fixed position
             mapWrapper.appendChild(markerDet);
+
             // Ensure the marker details are toggled on click
             marker.addListener('click', () => {
-                // Toggle the visibility of the marker details for mobile
+
+                // Toggle the visibility of the marker details box for mobile
                 const isVisible = markerDet.classList.contains('show-mobile');
                 document.querySelectorAll('.marker_det').forEach((el) => el.classList.remove('show-mobile'));
                 if (!isVisible) {
@@ -360,8 +390,9 @@ function initMap() {
         
     });
    
-
+    // To display the current position with a different kind of marker
     displayCurrentLocation(map);
+
     // Prevent touch zoom and gesture zoom on mobile devices
     document.addEventListener('touchstart', (e) => {
         if (e.touches.length > 1) e.preventDefault();
@@ -370,7 +401,12 @@ function initMap() {
     document.addEventListener('gesturestart', (e) => e.preventDefault());
 }
 
+
+
+
+// --- To display the current position with a different kind of marker ---
 function displayCurrentLocation(map) {
+
     // Check if the browser supports Geolocation API
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -393,6 +429,8 @@ function displayCurrentLocation(map) {
                     icon: userMarkerIcon,
                     title: 'You are here'
                 });
+
+                // Styling for the text
                 const labelDiv = document.createElement('div');
                 labelDiv.style.position = 'absolute';
                 labelDiv.style.background = 'transparent';
@@ -410,11 +448,12 @@ function displayCurrentLocation(map) {
                     panes.overlayLayer.appendChild(labelDiv);
                 };
 
+                // Updating the position of the text so it stays next to the marker
                 overlay.draw = function () {
                     const projection = this.getProjection();
                     const position = projection.fromLatLngToDivPixel(userMarker.getPosition());
                     labelDiv.style.left = position.x + 10 + 'px';
-                    labelDiv.style.top = position.y - 10 +'px'; // Adjust for positioning above the marker
+                    labelDiv.style.top = position.y - 10 +'px'; // Adjust for positioning next to the marker
                 };
 
                 overlay.setMap(map);
@@ -436,7 +475,7 @@ function displayCurrentLocation(map) {
 }
 
 
-
+// --- Changing the back-btn based on the screen size
 function updateBackBtnImg() {
     const image = document.getElementById("back-btn");
     if (window.innerWidth > 400) {
@@ -447,13 +486,12 @@ function updateBackBtnImg() {
 }
 // Update the image source when the page loads
 window.onload = updateBackBtnImg;
-
 // Update the image source on window resize
 window.onresize = updateBackBtnImg;
 
 
 
-
+// --- Preventing gesture zoom ---
 document.addEventListener('touchstart', function (e) {
     if (e.touches.length > 1) {
         e.preventDefault();  // Prevent pinch zoom

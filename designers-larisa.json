@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "pfp": "resources/designer1.png",
+        "name": "Liam Crawford",
+        "handle": "@crawlyford",
+        "post": "Mix high-end and affordable pieces to create a look that feels authentic and well-balanced. Combining luxury items with budget-friendly finds not only adds personality and depth to your style but also keeps it approachable and adaptable."
+    },
+    {
+        "id": 2,
+        "pfp": "resources/designer2.png",
+        "name": "Ava Bennett",
+        "handle": "@avagetbennet",
+        "post": "Accessorize to express, not to impress. Each piece should be an extension of who you are. "
+    },
+    {
+        "id": 3,
+        "pfp": "resources/designer3.png",
+        "name": "Anna Dew",
+        "handle": "@annydwee",
+        "post": "“Don't ever mix black and blue” is an old style rule that suggests these two dark, similar colors shouldn't be paired together in an outfit. Traditionally, some believed that black and navy, being close in shade, would clash or appear mismatched when worn side-by-side. However, in modern fashion, this rule is often seen as outdated, as black and blue can actually create a sophisticated, harmonious look when combined thoughtfully. Today, pairing black with navy or other shades of blue can offer a subtle contrast that feels both elegant and refined, proving that style rules are meant to be reimagined and broken to create something unique."
+    },
+    {
+        "id": 4,
+        "pfp": "resources/designer4.png",
+        "name": "Ethan Reynolds",
+        "handle": "@ethreynolds",
+        "post": "Invest in timeless pieces that will remain stylish and functional year after year. These classic items, whether in fashion, furniture, or technology, not only elevate your personal style but also offer durability and versatility that can withstand changing trends. By choosing high-quality, enduring designs, you create a foundation of essentials that you can rely on, saving both money and resources in the long run. Timeless pieces are about curating a collection that brings lasting value, ensuring each item you invest in remains both meaningful and practical for years to come."
+    },
+    {
+        "id": 5,
+       "pfp": "resources/designer5.png",
+        "name": "Celeste D'Aubrey",
+        "handle": "@celesteaubr",
+        "post": "True style isn't in the clothes; it's in the courage to wear them as yourself."
+    },
+    {
+        "id": 6,
+       "pfp": "resources/designer6.png",
+        "name": "Jasper Valente",
+        "handle": "@jasspyvay",
+        "post": "Fashion is a language that whispers who we are before we say a word. Each piece we wear should hold a story, a purpose, or a piece of our spirit. Style isn't about perfection; it's about choosing what resonates deeply and wearing it with conviction."
+    }
+]

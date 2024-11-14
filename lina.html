@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News page 1</title>
+    <link rel="stylesheet" href="stylesheet-lina.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="news">
+
+        <div class="image">
+            <div class="image-frame" style="background-image: url(resources/images/sustanability.jpg);"></div>
+        </div>
+
+        <div class="text-section">
+            <div class="content-wrapper">
+                <h1>CPHFW PUSHES SUSTAINABILITY FURTHER WITH UPDATED REQUIREMENTS</h1>
+                <img src="resources/images/drag icon.jpg" alt="Drag" class="drag-icon">
+            
+                <p>Copenhagen, Denmark - Copenhagen Fashion Week (CPHFW) continues to solidify its position as a leader in sustainable fashion with the release of its updated Sustainability Requirements.  These revised standards, which will apply to all brands participating in the official show schedule starting in January 2025, demonstrate CPHFW's commitment to driving positive change within the industry. <br><br>
+
+                First introduced in 2020 and implemented in 2023, the Sustainability Requirements have been a key instrument in pushing brands to prioritize ethical and environmentally responsible practices. This first revision builds upon the existing framework, incorporating industry developments, learnings from the past year, and the evolving EU policy landscape. <br><br>
+                
+                "Since we first enforced the Sustainability Requirements... it has been our ambition to annually amp up the requirements in order to keep pushing the brands and to continue setting the standard for fashion weeks globally," says Cecilie Thorsmark, CEO of Copenhagen Fashion Week. <br><br>
+                
+                The updated requirements feature a range of revisions, including:<br><br>
+                
+                - Strengthened criteria across all existing focus areas: This includes stricter guidelines on materials, manufacturing processes, working conditions, and waste management.<br><br>
+                
+                - Increased emphasis on circularity: Brands are encouraged to adopt circular business models, with specific requirements related to design, production, and end-of-life management of garments.<br><br>
+                
+                - Enhanced transparency and traceability:  Brands must provide detailed information about their supply chains and sustainability practices, enabling greater accountability and consumer awareness.<br><br>
+                
+                - Focus on social sustainability: The updated requirements underscore the importance of fair wages, safe working conditions, and diversity and inclusion within the fashion industry.<br><br>
+                
+                CPHFW's ongoing efforts extend beyond the Sustainability Requirements. The organization recently published its 2023 Annual Sustainability Report, highlighting progress made on its 2023-2025 Action Plan.  This includes achieving 20 out of 20 targets set for 2023, covering areas such as education, emission and waste reduction, and accelerating industry-wide sustainability efforts.<br><br>
+                
+                By consistently raising the bar for sustainable practices, CPHFW is not only influencing the brands that participate in its events but also inspiring other fashion weeks and industry players to embrace a more responsible approach. As the fashion world increasingly recognizes the urgent need for change, CPHFW's leadership serves as a beacon, guiding the industry towards a more sustainable future.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow-buttons">
+        <a href="news5.html"><img src="resources/images/arrow.png" alt="News Page 5"></a>
+        <a href="news2.html"><img src="resources/images/arrow.png" alt="News Page 2"></a>
+    </div>
+
+    <div class="back-button">
+        <a href="index.html"><img src="resources/images/Group 14.png" alt="Back"></a>
+    </div>
+
+    <div class="button-wrapper"> 
+        <button id="subscribe-btn">Subscribe <br> to Newsletter</button>
+    </div>
+
+    <div id="nav-wrapper">
+        <div id="nav">
+            <a href="inspiration_page-larisa.html"><img src="resources/Outfits.svg" alt=""></a>
+            <a href="map.html"><img src="resources/Map.svg" alt=""></a>        
+            <a href="index.html"><img src="resources/Home.svg" alt=""></a>
+            <a href="events.html"><img src="resources/Calendar.svg" alt=""></a>
+            <div id="selection-wrapper">
+                <a href="lina.html"><img src="resources/News.svg" alt=""></a>
+                <div id="selection"></div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="overlay" class="overlay">
+        <div class="modal">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h1>
+                <span class="highlight"><b>Sign up</b></span> to get exclusive discounts<br>
+                from our sponsors and stay on top<br>
+                of the latest news.
+            </h1>
+            <p>Your email:</p>
+            <form id="email-form">
+                <input type="email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="thank-you-overlay" class="overlay"> 
+        <div class="modal">
+          <span class="close-btn" onclick="closeThankYouOverlay()">&times;</span> 
+          <h2>Thank you <br> for your subscription!</h2>
+        </div>
+    </div>
+
+    <script src="overlay.js"></script>
+
+</body>
+</html>

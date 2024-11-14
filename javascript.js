@@ -405,3 +405,25 @@ document.addEventListener('touchstart', function (e) {
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();  // Prevent gesture zoom
 });
+
+
+
+/*
+// --- Hide the navbar on scroll down ---
+
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const navbar = document.getElementById('nav');
+    if (currentScroll > lastScrollTop) {
+        navbar.style.bottom = - 200 + 'px';
+    } else {
+        // User is scrolling up
+        navbar.style.bottom = 17 + 'px';
+    }
+
+    // Update the last scroll position
+    lastScrollTop = currentScroll;
+});
+*/

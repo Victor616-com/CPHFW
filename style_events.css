@@ -1,0 +1,751 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+#nav-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav {
+    position: fixed;
+    bottom: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    gap: 78px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 9px 78px 4px 78px;
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
+#nav img{
+    height: 32px;
+    width: auto;
+
+}
+
+#nav #selection-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+#nav #selection {
+    width: 20px;
+    height: 3px;
+    border-radius: 6px;
+    background: var(--Black, #161616);
+}
+
+.gradient{
+    width: 100%;
+    height: 1024px;
+    padding: 0;
+    margin: 0;
+}
+.header h1 {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-size: 136.79px;
+    font-style: normal;
+    line-height: 164px;
+    margin: 0;
+}
+
+.header p {
+    line-height: 26.42px;
+    font-family: "Albert Sans", sans-serif;
+    font-size: 22.02px;
+    width: 541.82px;
+    height: 89.88px;
+}
+
+/* Line Styles */
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    flex-grow: 1;
+}
+
+/* Event List Styles */
+.event-list {
+    margin-top: 0;
+    margin: 20px;
+}
+
+.event-day {
+    margin-bottom: 20px;
+}
+
+.day-header {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 0;
+    font-family: "Albert Sans", sans-serif;
+}
+
+.event-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d22;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 10px;
+    height: 37px;
+    width: 32px;
+}
+
+/* Event Styles */
+.event {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+
+.event-info {
+    margin-left: 0px;
+}
+
+.event-info h2 {
+    font-size: 1.2em;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.event-info p {
+    margin: 5px;
+    padding-bottom: 10px;
+    font-family: "Albert Sans", sans-serif;
+}
+
+/* Event Date Styles */
+.event-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.date-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.month, .day-name {
+    font-size: 14px;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 1);
+}
+
+.day-name {
+    color: rgba(129, 129, 129, 1);
+}
+
+.date-number {
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    font-size: 90px;
+    width: 73px;
+    height: 108px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background: url(./resources/Frame.png);
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 1366px;
+    height: 1024px;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Date Container Styles */
+.date-container {
+    position: absolute;
+    top: 595px;
+    left: 55px;
+    display: flex;
+    align-items: center;
+    width: 600px; /* Adjust width as needed */
+    gap: 20px; /* Adjust gap as needed */
+}
+
+.date-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+}
+
+.date-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 35px;
+    margin-bottom: 15px;
+    width: 210px;
+    height: 65px;
+}
+
+.month {
+    font-size: 14px;
+    color: black;
+    margin-bottom: 18px;
+}
+
+.weekday {
+    font-size: 14px;
+    color: #999;
+}
+
+.day {
+    font-size: 36px;
+    font-weight: bold;
+    color: #D91E36;
+    z-index: 2;
+}
+
+.more-info {
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 400;
+    width: 117.55px;
+    height: 37.6px;
+    padding: 10.3px 26.78px;
+    border-radius: 13.39px;
+    border: 1.03px solid rgba(198, 33, 39, 1);
+}
+
+.event-info h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    left: 55px;
+}
+
+/* Title Events Styles */
+.title-events {
+    position: absolute;
+    top: 365px; /* Adjust as needed */
+    left: 55px;
+}
+
+.title-events p {
+    font-size: 25px; /* Adjust as needed */
+    margin: 0;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.title-events p.event-in-title {
+    font-size: 25px; /* Adjust as needed */
+    margin: 0;
+    padding: 0;
+}
+
+/* Map Container Styles */
+.map-container {
+    position: absolute;
+    top: 46%; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 520px; /* Adjust as needed */
+    height: 340px; /* Adjust as needed */
+    border: 1px solid #ccc;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    filter: blur(7.3px); /* Add blur effect */
+}
+
+.map-button {
+    font-family: "Albert Sans", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #d22;
+    color: #fff;
+    border: none;
+    border-radius: 17px;
+    cursor: pointer;
+    height: 55px;
+    width: 200px;
+    font-size: 22px; /* Set font size */
+    font-weight: 500; /* Set font weight */
+}
+
+/* Description Styles */
+.description {
+    display: flex;
+    max-width: 55%;
+    position: absolute;
+    bottom: 80px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    align-items: flex-start;
+}
+
+.description img {
+    margin-right: 10px; /* Adjust as needed */
+    padding-bottom: 80px;
+}
+
+.description p {
+    font-family: "Albert Sans", sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Modal Details Styles */
+#modalDetails .location {
+    font-size: 20px; /* Ensure this is specific enough */
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+#modalDetails .time {
+    font-size: 20px;
+    color: #777;
+}
+
+.location-container {
+    display: flex;
+    align-items: center;
+}
+
+.location-icon {
+    width: 37px; /* Adjust as needed */
+    height: 37px; /* Adjust as needed */
+    margin-left: 17px; /* Adjust as needed */
+    padding-bottom: 15px;
+    vertical-align: middle;
+}
+
+/* Modal Content Styles */
+.modal-content .event-info h2 {
+    font-size: 135px;
+    background: linear-gradient(90deg, #C62127 0%, #D08787 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.modal-content .event-info #modalDateNumber {
+    font-size: 110px;
+    font-weight: 400;
+    font-family: "Bebas Neue", serif;
+    background: linear-gradient(90deg, #C62127 0%, #D08787 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.modal-content{
+    position: relative;
+    background-size: cover;
+    background-image: url(./resources/Frame.png);
+    background-position: top;
+    
+
+}
+
+/* Close Button Styles */
+.close {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    scale: 0.9;
+}
+
+.map-button-mobile {
+    display: none;
+}
+
+#modalTitle-mobile {
+    display: none;
+}
+
+#last-event {
+    margin-bottom: 70px;
+}
+
+
+@media only screen and (max-width: 391px) {
+
+    .modal-content.mobile-background {
+        background-image: url('./resources/bgopera.png') !important; /* Replace with your mobile background image */
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+
+    .rectangle {
+        width: calc(100% - 30px); /* Full width minus left and right padding */
+        height: 110px; /* Adjust height as needed */
+        background-color: gray;
+        margin-bottom: 8px; /* Space between rectangles and sides */
+        padding: 10px; /* Padding inside rectangles */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 11px;
+        position: relative; /* Ensure absolute positioning works inside */
+    }
+
+    .rectangle-1 {
+        background-image: url('resources/operamobile.png');
+        background-size: cover;
+        background-position-x: center;
+    }
+
+    .rectangle-2 {
+        background-image: url('resources/forzamobile.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rectangle-3 {
+        background-image: url('resources/joaomobile.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rectangle-4 {
+        background-image: url('resources/1979mobile.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rectangle-5 {
+        background-image: url('resources/baummobile.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rectangle-6 {
+        background-image: url('resources/gestuzmobile.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rectangle-7 {
+        background-image: url('resources/munthemobile.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .rectangle .more-info {
+        position: absolute;
+        bottom: 0px;
+        right: 10px;
+    }
+
+    .more-info {
+        width: 115px;
+        height: 30px;
+        background: rgba(198, 33, 39, 0.45);
+        color: white;
+        padding: 8px 31px;
+        border-radius: 5px;
+        font-family: "Albert Sans", sans-serif;
+        font-size: 12px;
+    }
+
+    .date-text {
+        color: purple !important;
+        position: absolute;
+        top: -28px;
+        right: -141px;
+        font-size: 12px;
+       
+    }
+
+    
+    .day-name {
+        color: white; /* Ensure this color is applied */
+        margin: 0;
+    }
+
+    .month {
+        color: white;
+        margin: 0;
+    }
+
+    .event {
+        border-top: 0;
+        color: white;
+    }
+
+    .event-info {
+        margin: 0;
+    }
+
+    .event-info h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .event-info p {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .date-number {
+        display: none;
+    }
+
+    .rectangle .event {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .rectangle .event-info {
+        flex: 1;
+    }
+
+    .rectangle .event-date,
+    .rectangle .more-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+
+    .modal {
+        width: calc(100% ); /* Adjust width for mobile */
+        height: 844px; /* Adjust height for mobile */
+        margin: 20px auto; /* Center the modal */
+        margin-top: 0;
+      
+        background: white; /* Background color */
+        border: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    }
+
+    .map{
+        display: none;
+    }
+    .map-container {
+        border: white;
+        display: none;
+    }
+
+    .map-button{
+        display: none;
+
+    }
+
+    .map-button-mobile{
+        display: block;
+        width: 105px;
+        height: 30px;
+        font-size: 10px;
+        font-family: "Albert Sans", sans-serif;
+        /* position: absolute;
+        top: 50%;
+        left: 50%; */
+        padding: 8.34px 20px;
+        background-color: #d22;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 30px;
+        width: 105px;
+        font-size: 11px; /* Set font size */
+        font-weight: 500; /* Set font weight */
+        position: absolute;
+        bottom: 90px;
+        left: 20px;
+    }
+
+    .event-in-title{
+        font-size: 21.52px !important;
+    }
+    
+
+    .modal-content {
+        background-size: 160%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      
+        border: white;
+    }
+
+    .title-events {
+        position: absolute;
+        top: 365px; /* Adjust as needed */
+        left: 0; /* Hug the left side */
+        padding-right: 20px;
+        padding-left: 20px; /* Add some padding if needed */
+        width: calc(100% - 20px); /* Ensure it doesn't overflow */
+    
+    }
+
+   
+    .title-events #modalTitle {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .modal-header, .modal-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid #ddd; /* Divider line */
+        padding-bottom: 10px; /* Padding */
+    }
+
+    .modal-footer {
+        border-top: 1px solid #ddd; /* Divider line */
+        padding-top: 10px; /* Padding */
+    }
+
+   
+    .date-container {
+        width: 291px; /* Adjust width for mobile */
+        height: 88px; /* Adjust height for mobile */
+        position: absolute;
+        top: 500px; /* Adjust as needed */
+        left: 25px; /* Adjust as needed */
+        display: flex;
+        align-items: center;
+        gap: 0px; /* Adjust gap as needed */
+    }
+
+    .date-container #modalDateNumber{
+        font-size: 70px !important;
+    }
+
+    .location-container p{
+        font-size: 14px !important;
+    }
+
+    #modalTime {
+        font-size: 14px !important;
+    }
+
+    .date-left #modalWeekday, #modalMonth{
+        font-size: 10px !important;
+    }
+
+    .date-left  #modalMonth{
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .description{
+        margin-bottom: 50px;
+        font-size: 13px;
+    }
+
+    #nav-wrapper {
+        display: flex;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #nav {
+        position: fixed;
+        bottom: 0px;
+        width: calc(100vw - 20px);
+        gap: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: top;
+        background-color: white;
+        border-radius: 0px;
+        padding: 5px 10px 3px 10px;
+        box-shadow: var(--shadow);
+    }
+    
+    #nav img{
+        height: 32px;
+        width: auto;
+    
+    }
+    
+    #nav #selection-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #nav #selection {
+        width: 20px;
+        height: 3px;
+        border-radius: 6px;
+        background: var(--Black, #161616);
+    }
+
+
+}

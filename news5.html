@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News page 5</title>
+    <link rel="stylesheet" href="stylesheet-lina.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="news">
+
+        <div class="image">
+            <div class="image-frame" style="background-image: url(resources/images/creativity.jpg);"></div>
+        </div>
+
+        <div class="text-section">
+            <div class="content-wrapper">
+                <h1>Be a part of creativity -
+                    <br>Join CPHFW 2025.</h1>
+                <img src="resources/images/drag icon.jpg" alt="Drag" class="drag-icon">
+            
+                <p>
+                    Copenhagen Fashion Week 2025 is making waves in the fashion world! This year’s focus is
+                    sustainability, inspiring the industry to adopt eco-friendly practices. The fashion sector
+                    accounts for about 10% of global carbon emissions and 20% of wastewater, highlighting the urgent need for change. As awareness of environmental issues grows, Copenhagen is leading the way toward a greener future in fashion.
+
+                    “Style is a way to say who you are without
+                    having to speak."
+                    Many of us think that fashion applies just the clothes we wear, but it can be applied to almost anything we do.
+                    It’s used to describe a means of expression through colors, textures and styles.
+
+                    This year, the spotlight is on unique fashion pieces from Nordic designers. Copenhagen
+                    encourages everyone to change their shopping habits. Thrift shopping is becoming popular,
+                    inviting fashion lovers to find affordable, one-of-a-kind items in second-hand stores. This
+                    helps reduce waste and supports sustainability.
+
+                    Copenhagen Fashion Week is more than just a showcase; it’s an educational platform.
+                    Throughout the week, workshops and discussions focus on sustainable fashion practices.
+
+                    Industry leaders, environmentalists, and designers share their insights, emphasizing the
+                    need for sustainability in fashion.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="arrow-buttons">
+        <a href="news4.html"><img src="resources/images/arrow.png" alt="News Page 4"></a>
+        <a href="lina.html"><img src="resources/images/arrow.png" alt="News Page 1"></a>
+    </div>
+    <div class="back-button">
+        <a href="index.html"><img src="resources/images/Group 14.png" alt="Back"></a>
+    </div>
+    <div class="button-wrapper"> 
+        <button>Subscribe <br> to Newsletter</button>
+    </div>
+
+    <div class="button-wrapper"> 
+        <button id="subscribe-btn">Subscribe <br> to Newsletter</button>
+    </div>
+
+    <div id="nav-wrapper">
+        <div id="nav">
+            <a href="inspiration_page-larisa.html"><img src="resources/Outfits.svg" alt=""></a>
+            <a href="map.html"><img src="resources/Map.svg" alt=""></a>        
+            <a href="index.html"><img src="resources/Home.svg" alt=""></a>
+            <a href="events.html"><img src="resources/Calendar.svg" alt=""></a>
+            <div id="selection-wrapper">
+                <a href="lina.html"><img src="resources/News.svg" alt=""></a>
+                <div id="selection"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="overlay" class="overlay">
+        <div class="modal">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h1>
+                <span class="highlight"><b>Sign up</b></span> to get exclusive discounts<br>
+                from our sponsors and stay on top<br>
+                of the latest news.
+            </h1>
+            <p>Your email:</p>
+            <form id="email-form">
+                <input type="email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="thank-you-overlay" class="overlay"> 
+        <div class="modal">
+          <span class="close-btn" onclick="closeThankYouOverlay()">&times;</span> 
+          <h2>Thank you <br> for your subscription!</h2>
+        </div>
+    </div>
+
+    <script src="overlay.js"></script>
+
+</body>
+</html>

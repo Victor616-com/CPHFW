@@ -1,0 +1,80 @@
+[
+    {
+        "title": "OPÉRASPORT",
+        "location": "Copenhagen City Hall",
+        "time": "12:00 - 13:00",
+        "dateNumber": "05",
+        "month": "August",
+        "weekday": "Monday",
+        "background": "./resources/Frame.png",
+        "description": "One of Denmark’s most iconic fashion houses, Baum und Pferdgarten is known for playful patterns, vibrant colors, and sophisticated details. Expect a lively collection that merges timeless elegance with modern charm",
+        "icon": "./resources/cch.png"
+    },
+    {
+        "title": "Forza Collective",
+        "location": "Forum Copenhagen",
+        "time": "13:00 - 14:00",
+        "dateNumber": "05",
+        "month": "August",
+        "weekday": "Monday",
+        "background": "./resources/forzacollective.png",
+        "description": "Forza Collective celebrates modern femininity with bold designs that mix texture and color. Their collections often feature statement prints and intricate details, focusing on empowering women through innovative and unique designs.",
+        "icon": "./resources/fcph.png"
+    },
+    {
+        "title": "Joao Marashin",
+        "location": "Copenhagen City Hall",
+        "time": "11:00 - 12:00",
+        "dateNumber": "06",
+        "month": "August",
+        "weekday": "Tuesday",
+        "background": "./resources/joao.png",
+        "description": "Joao Marashin brings artistic flair to the runway with pieces that reflect his cultural heritage and innovative vision. His designs often feature hand-painted fabrics and experimental shapes that showcase his unique perspective.",
+        "icon": "./resources/cch.png"
+    },
+    {
+        "title": "Lovechild 1979",
+        "location": "Øksnehallen",
+        "time": "15:00 - 16:00",
+        "dateNumber": "06",
+        "month": "August",
+        "weekday": "Tuesday",
+        "background": "./resources/1979.png",
+        "description": "Lovechild 1979 embodies effortless Scandinavian style with feminine, understated designs. Expect soft colors, classic silhouettes, and versatile pieces that cater to the modern woman’s wardrobe.",
+        "icon": "./resources/oksn.png"
+    },
+
+    {
+        "title": "Baum und Pferdgarten",
+        "location": "Bella Center on Amager",
+        "time": "11:00 - 12:00",
+        "dateNumber": "07",
+        "month": "August",
+        "weekday": "Wednesday",
+        "background": "./resources/baum.png",
+        "description": "One of Denmark’s most iconic fashion houses, Baum und Pferdgarten is known for playful patterns, vibrant colors, and sophisticated details. Expect a lively collection that merges timeless elegance with modern charm",
+        "icon": "./resources/bella.png"
+    },
+    {
+        "title": "Gestuz",
+        "location": "Forum Copenhagen",
+        "time": "12:00 - 13:00",
+        "dateNumber": "07",
+        "month": "August",
+        "weekday": "Wednesday",
+        "background": "./resources/gestuz.png",
+        "description": "Gestuz offers contemporary pieces with an edge. Their collection focuses on versatility and understated style, featuring sharp tailoring, modern silhouettes, and bold colors suitable for every occasion.",
+        "icon": "./resources/fcph.png"
+    },
+    {
+        "title": "Munthe",
+        "location": "Copenhagen City Hall",
+        "time": "11:00 - 12:00",
+        "dateNumber": "08",
+        "month": "August",
+        "weekday": "Thursday",
+        "background": "./resources/munthe.png",
+        "description": "Munthe is known for its artistic approach to fashion, combining bohemian elements with a modern edge. Their collections often feature hand-painted prints, luxurious fabrics, and a mix of casual and sophisticated styles.",
+        "icon": "./resources/cch.png"
+    }
+]

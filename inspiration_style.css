@@ -1,0 +1,229 @@
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    background-image: url("resources/paper_texture.png");
+    background-size: 100%;
+    background-blend-mode: exclusion;
+  }
+
+  :root {
+    font-size: 16px;
+    font-family: "Albert Sans", "Bebas Neue", Arial, Helvetica, sans-serif;
+    line-height : 1.5;
+}
+
+/*----------TITLE------------*/
+header {
+    max-width: 100%;
+    max-height: 11vh;
+    padding-top: 30px;
+    align-items: center;
+    z-index: 0;
+}
+.title-pic { 
+    max-width: 100%;
+    height: 150%;
+}
+
+/*----------TITLE END------------*/
+
+
+/*----------CLOTHES------------*/
+
+.scroll-container {
+    overflow: auto;
+    scrollbar-width: none;
+    width: 100vw;
+    max-height: 51vh;
+    padding-top: 5px;
+  }
+  
+.hang-rod {
+    position: absolute;
+    width: 100%;
+    max-height: 2.5vh; 
+    z-index: 1;
+}
+
+ .clothes img {
+    position: relative;
+    height: 45vh;
+    z-index: 3;
+    bottom: 0.5vh;
+  }
+.clothes {
+    white-space: nowrap;
+    position: relative;
+}
+
+/*----------CLOTHES END------------*/
+
+/*----------SELECT OUTFIT------------*/
+
+.select-outfit {
+    display: inline-block;   
+    position: absolute;
+    white-space: nowrap;
+    padding-top: 2vh;
+    width: 100vw;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 3vh;
+}
+
+.select-outfit img {
+    display: inline;
+    width: 30%;
+}
+
+.line1 {
+    float: left;
+}
+
+.line2 {
+    float: right;
+}
+
+.try-on { 
+    display: inline;
+    font-family: "Albert Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-style: normal;
+    font-size: 200%;
+  }
+/*----------SELECT OUTFIT END------------*/
+
+
+/*----------DRAG------------*/
+
+.overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh; /* Only handle visible initially */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, #161616 55%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    transition: height 0.3s ease;
+  }
+  
+  /* Expanded overlay state */
+  .overlay.expanded {
+    height: 100vh; /* Full height when expanded */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #161616 20%);
+    z-index: 3000;
+  }
+  
+  /* Handle image styling */
+  .overlay-handle {
+    width: 100vw;
+    cursor: grab;
+    margin-top: 1.5vh; /* Pull up the handle slightly */
+    z-index: 1001;
+  }
+
+  .tt {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: hidden; 
+    bottom: -20vh;
+    z-index: 2000;
+  }
+  .tt p {
+    display: inline-block;   
+    white-space: nowrap;
+    font-family: "Bebas Neue";
+    font-size: 2.5vw;
+    color: #FFFFFF;
+    letter-spacing: 15px;
+  }
+  
+  /* Overlay content */
+  .overlay-content {
+    opacity: 0;
+    color: white;
+    text-align: center;
+    padding-top: 60px; /* Space for handle when expanded */
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Show content when overlay is expanded */
+  .overlay.expanded .overlay-content {
+    opacity: 1;
+  }
+
+/*----------DRAG END------------*/
+
+/*----------TIPS AND TRICKS------------*/
+
+.overlay-content {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.designer-post {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 25px;
+  width: 40vw;
+  margin-bottom: 10px;
+}
+
+.designer-post-head {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+
+.designer-post-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.designer-post img{ 
+  height: 70vh;
+  width: 10vw;
+  margin: 10px;
+}
+
+.designer-post h1 {
+  font-family: "Bebas Neue";
+  color: #161616;
+  display: inline;
+  letter-spacing: 6px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.designer-post h2 {
+  font-family: "Albert Sans";
+  color: #161616;
+  display: inline;
+  font-weight: 200;
+  text-align: left;
+  margin: 1px;
+}
+
+.designer-post p {
+  font-family: "Albert Sans";
+  color: #161616;
+  font-weight: 500;
+  text-align: left;
+  margin: 20px;
+  font-size: 130%;
+}
+
+/*----------TIPS AND TRICKS END------------*/
