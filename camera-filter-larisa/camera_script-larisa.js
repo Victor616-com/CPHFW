@@ -21,7 +21,7 @@ function setup() {
   video.hide();
 
   // Initialize PoseNet with flipHorizontal for better performance
-  poseNet = ml5.poseNet(video, { flipHorizontal: true }, modelLoaded);
+  poseNet = ml5.poseNet(video, { flipHorizontal: false }, modelLoaded);
   poseNet.on('pose', results => {
     poses = results;
   });
