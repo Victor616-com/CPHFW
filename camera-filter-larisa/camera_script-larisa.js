@@ -14,14 +14,9 @@ function setup() {
   const canvas = createCanvas(window.innerWidth, window.innerHeight);
   canvas.position(0, 0);
 
-  // Create low-resolution video capture and flip it
-  video = createCapture({
-    video: {
-      width: 320,
-      height: 240,
-    },
-  });
-  video.size(320, 240);
+  // Create video capture and flip it
+  video = createCapture(VIDEO);
+  video.size(width, height);
   video.style('transform', 'scaleX(-1)');
   video.hide();
 
