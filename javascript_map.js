@@ -42,7 +42,7 @@ const markers = [
 ];
 
 function openEventsLink() {
-    window.location.href = "https://www.example.com";
+    window.location.href = "events.html";
 }
 
 // --- Function for the map --- 
